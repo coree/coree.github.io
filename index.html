@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joseph Cornelius</title>
+<meta name="author" content="Joseph Cornelius">
+<meta name="description" content="">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1f2328;        /* headings + body text */
+    --accent: #101080;     /* A deep navy-indigo. */
+    --muted: #8b949e;      /* venues, coauthors, footer */
+    --rule: #eaecef;       /* hairline dividers */
+    --pill-bg: #eef1f4;    /* reference-link badges */
+    --pill-ink: #3a4653;
+    --icon: #9aa0a6;
+    --bg: #ffffff;
+    --measure: 44rem;      /* centered column width */
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                 Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  main {
+    max-width: var(--measure);
+    margin: 0 auto;
+    padding: 4rem 1.5rem 5rem;
+  }
+
+  /* ---- Header (centered) ---- */
+  header { text-align: center; margin-bottom: 3.5rem; }
+
+  .photo {
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 1.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.9rem;
+  }
+
+  .icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+  }
+  .icons a { color: var(--icon); display: inline-flex; }
+  .icons a:hover { color: var(--ink); }
+  .icons svg { width: 22px; height: 22px; }
+
+  /* ---- Sections (left-aligned) ---- */
+  section { margin-top: 3rem; }
+  section:first-of-type { margin-top: 0; }  /* intro flows from header */
+
+  h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--rule);
+    margin: 0 0 1.4rem;
+  }
+
+  p { margin: 0 0 1.15rem; }
+
+  /* Links: one confident indigo, colored not underlined (Mu-style).
+     Underline appears only on hover. This base rule covers bio links,
+     coauthor names, and publication titles alike. Icon and reference-tag
+     colors are set separately below so they keep their own treatment. */
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; text-underline-offset: 2px; }
+
+  /* ---- Publication entries ---- */
+  .entry { padding: 1.4rem 0; border-bottom: 1px solid var(--rule); }
+  .entry:first-of-type { padding-top: 0.2rem; }
+
+  .entry .title {
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-bottom: 0.35rem;
+  }
+  .entry .authors { color: var(--muted); margin-bottom: 0.1rem; }
+  .entry .authors .me { color: var(--ink); font-weight: 700; }
+  .entry .authors sup { font-size: 0.7em; }
+  .entry .venue { color: var(--muted); margin-bottom: 0.7rem; }
+
+  /* Reference links as bracketed text, all one color.
+     For gray instead of brand, change the .refs a color to var(--muted). */
+  .refs { display: flex; flex-wrap: wrap; gap: 0.45rem; font-size: 0.92rem; }
+  .refs a { color: var(--accent); text-decoration: none; }
+  .refs a::before { content: "["; }
+  .refs a::after  { content: "]"; }
+  .refs a:hover { text-decoration: underline; text-underline-offset: 2px; }
+
+  .fulllist { color: var(--muted); font-size: 0.9rem; margin-top: 2rem; }
+
+  .awards { list-style: none; padding-left: 0; margin: 0; }
+  .awards li { margin-bottom: 0.7rem; }
+
+  /* ---- Lists (teaching, etc.) ---- */
+  ul { padding-left: 1.3rem; margin: 0 0 1.15rem; }
+  ul li { margin-bottom: 0.55rem; }
+  .note { color: var(--muted); }
+  em { font-style: italic; }
+
+  /* ---- Footer ---- */
+  footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--rule);
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+
+  @media (max-width: 480px) {
+    body { font-size: 17px; }
+    main { padding: 3rem 1.25rem 4rem; }
+    h1 { font-size: 1.75rem; }
+    h2 { font-size: 1.4rem; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <header>
+    <!-- Put a square image at ./assets/photo.jpg -->
+    <img class="photo" src="assets/photo.jpg" alt="Joseph Cornelius">
+    <h1>Joseph Cornelius</h1>
+    <nav class="icons">
+      <a href="mailto:joseph.cornelius@idsia.ch" aria-label="Email" title="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+      </a>
+      <a href="https://scholar.google.com/" aria-label="Google Scholar" title="Google Scholar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 1 9l11 5 9-4.09V16"/><path d="M5 11.5V16c0 1.5 3.13 3 7 3s7-1.5 7-3v-4.5"/></svg>
+      </a>
+      <a href="https://github.com/coree" aria-label="GitHub" title="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5a10.5 10.5 0 0 0-3.32 20.47c.52.1.71-.23.71-.5v-1.75c-2.92.64-3.54-1.4-3.54-1.4-.48-1.22-1.17-1.55-1.17-1.55-.96-.65.07-.64.07-.64 1.06.08 1.62 1.09 1.62 1.09.94 1.62 2.47 1.15 3.07.88.1-.68.37-1.15.67-1.42-2.33-.27-4.78-1.17-4.78-5.18 0-1.15.41-2.08 1.09-2.81-.11-.27-.47-1.34.1-2.79 0 0 .88-.28 2.88 1.07a10 10 0 0 1 5.24 0c2-1.35 2.88-1.07 2.88-1.07.57 1.45.21 2.52.1 2.79.68.73 1.09 1.66 1.09 2.81 0 4.02-2.46 4.9-4.8 5.16.38.33.71.97.71 1.96v2.9c0 .28.19.61.72.5A10.5 10.5 0 0 0 12 1.5z"/></svg>
+      </a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <p>
+      I am a PhD candidate in the group of <a href="https://krauthammerlab.ch/">Michael Krauthammer</a> at the
+      University of Zurich and University Hospital Zurich, co-supervised by
+      <a href="https://nlp.idsia.ch/PEOPLE/Fabio/fabiorinaldi.html">Fabio Rinaldi</a>. I am
+      also a researcher in the <a href="https://nlp.idsia.ch/">NLP group</a> at
+      <a href="https://www.idsia.ch/">IDSIA</a> (USI–SUPSI) in Lugano. My research is in natural language processing, with a focus on the scientific, biomedical, biodiversity, and clinical domains, working on knowledge extraction and understanding the differences between human-written and machine-generated text.
+    </p>
+    <p>
+      I hold an MSc in Neural Systems and Computation from the University of Zurich and
+      ETH Zurich's <a href="https://www.ini.uzh.ch/">Institute of Neuroinformatics</a>;
+      I carried out my master's thesis at Stanford as a visiting student researcher,
+      supervised by <a href="https://cocolab.stanford.edu/">Noah Goodman</a> and
+      co-supervised by <a href="https://ee.ethz.ch/de/departement/professoren/professoren-kontaktdetails/person-detail.NTI3MDk=.TGlzdC80MTEsMTA1ODA0MjU5.html">Richard Hahnloser</a>.
+      Before joining IDSIA, I worked as a research assistant at the
+      <a href="https://www.cl.uzh.ch/">Department of Computational Linguistics</a> in
+      Zurich. I received a BSc in Computer Science from Heinrich-Heine-University
+      Düsseldorf, where I worked with <a href="https://dbs.cs.uni-duesseldorf.de/">Stefan Conrad</a>.
+    </p>
+  </section>
+
+  <section id="publications">
+    <h2>Publications</h2>
+
+    <div class="entry">
+      <div class="title"><a href="https://doi.org/10.3897/BDJ.13.e153070">From literature to biodiversity data: mining arthropod organismal traits with machine learning</a></div>
+      <div class="authors"><span class="me">Joseph Cornelius</span>, Harald Detering, Oscar Lithgow-Serrano, Donat Agosti, <a href="https://nlp.idsia.ch/PEOPLE/Fabio/fabiorinaldi.html">Fabio Rinaldi</a>, Robert M. Waterhouse</div>
+      <div class="venue">Biodiversity Data Journal, 2025</div>
+      <div class="refs">
+        <a href="https://bdj.pensoft.net/article/153070/download/pdf/">pdf</a>
+        <a href="https://doi.org/10.3897/BDJ.13.e153070">doi</a>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="title"><a href="https://aclanthology.org/2025.semeval-1.239/">Swushroomsia at SemEval-2025 Task 3: Probing LLMs' Collective Intelligence for Multilingual Hallucination Detection</a></div>
+      <div class="authors">Sandra Mitrovic, <span class="me">Joseph Cornelius</span>, <a href="https://davkletz.github.io/">David Kletz</a>, Ljiljana Dolamic, <a href="https://nlp.idsia.ch/PEOPLE/Fabio/fabiorinaldi.html">Fabio Rinaldi</a></div>
+      <div class="venue">SemEval @ ACL 2025</div>
+      <div class="refs">
+        <a href="https://aclanthology.org/2025.semeval-1.239/">pdf</a>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="title"><a href="https://doi.org/10.2312/dh.20253150">Enhancing the study of historical figures through AI-powered interactive data visualizations</a></div>
+      <div class="authors">Giovanni Profeta, <span class="me">Joseph Cornelius</span>, <a href="https://nlp.idsia.ch/PEOPLE/Fabio/fabiorinaldi.html">Fabio Rinaldi</a></div>
+      <div class="venue">Digital Humanities (DH), Siena, 2025</div>
+      <div class="refs">
+        <a href="https://doi.org/10.2312/dh.20253150">doi</a>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="title"><a href="https://aclanthology.org/2024.naacl-long.444">BUST: Benchmark for the Evaluation of Detectors of LLM-Generated Text</a></div>
+      <div class="authors"><span class="me">Joseph Cornelius</span>, Oscar Lithgow-Serrano, Sandra Mitrovic, Ljiljana Dolamic, <a href="https://nlp.idsia.ch/PEOPLE/Fabio/fabiorinaldi.html">Fabio Rinaldi</a></div>
+      <div class="venue">NAACL 2024</div>
+      <div class="refs">
+        <a href="https://aclanthology.org/2024.naacl-long.444">pdf</a>
+        <a href="https://doi.org/10.18653/v1/2024.naacl-long.444">doi</a>
+        <a href="https://github.com/IDSIA-NLP/BUST">github</a>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="title"><a href="https://research.nii.ac.jp/ntcir/workshop/OnlineProceedings16/pdf/ntcir/05-NTCIR16-MEDNLP-CorneliusJ.pdf">Leveraging Token-Based Concept Information and Data Augmentation in Few-Resource NER: ZuKyo-EN at the NTCIR-16 Real-MedNLP Task</a></div>
+      <div class="authors"><span class="me">Joseph Cornelius</span>, Oscar Lithgow-Serrano, Vani Kanjirangat, <a href="https://nlp.idsia.ch/PEOPLE/Fabio/fabiorinaldi.html">Fabio Rinaldi</a>, et al., <a href="https://krauthammerlab.ch/">Michael Krauthammer</a></div>
+      <div class="venue">NTCIR-16, 2022</div>
+      <div class="refs">
+        <a href="https://research.nii.ac.jp/ntcir/workshop/OnlineProceedings16/pdf/ntcir/05-NTCIR16-MEDNLP-CorneliusJ.pdf">pdf</a>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="title"><a href="https://doi.org/10.1186/s12859-021-04511-y">Parallel sequence tagging for concept recognition</a></div>
+      <div class="authors">Lenz Furrer, <span class="me">Joseph Cornelius</span>, <a href="https://nlp.idsia.ch/PEOPLE/Fabio/fabiorinaldi.html">Fabio Rinaldi</a></div>
+      <div class="venue">BMC Bioinformatics, 2021</div>
+      <div class="refs">
+        <a href="https://doi.org/10.1186/s12859-021-04511-y">doi</a>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="title"><a href="https://aclanthology.org/2020.smm4h-1.1">COVID-19 Twitter Monitor: Aggregating and Visualizing COVID-19 Related Trends in Social Media</a></div>
+      <div class="authors"><span class="me">Joseph Cornelius</span>, Tilia Ellendorff, Lenz Furrer, <a href="https://nlp.idsia.ch/PEOPLE/Fabio/fabiorinaldi.html">Fabio Rinaldi</a></div>
+      <div class="venue">SMM4H @ COLING 2020</div>
+      <div class="refs">
+        <a href="https://aclanthology.org/2020.smm4h-1.1">pdf</a>
+      </div>
+    </div>
+
+    <p class="fulllist">Full list on <a href="https://dblp.org/pid/195/7914.html">DBLP</a> and <a href="https://www.semanticscholar.org/author/Joseph-Cornelius/39689203">Semantic Scholar</a>.</p>
+  </section>
+
+  <footer>
+    &copy; 2026 Joseph Cornelius
+  </footer>
+
+</main>
+</body>
+</html>
